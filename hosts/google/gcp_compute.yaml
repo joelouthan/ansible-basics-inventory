@@ -1,0 +1,15 @@
+---
+# Example found at https://devopscube.com/ansible-dymanic-inventry-google-cloud/
+plugin: google.cloud.gcp_compute
+projects:
+  - devopscube-262115
+auth_kind: serviceaccount
+service_account_file: /opt/ansible/inventory/service-account.json
+keyed_groups:
+  - key: labels
+    prefix: label
+  - key: zone
+    prefix: zone
+groups:
+  development: "'env' in (labels|list)"
+  staging: "'jenkins' in name"

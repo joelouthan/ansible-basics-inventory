@@ -1,0 +1,31 @@
+---
+# Manually install collections using the following command:
+#   cd collections; ansible-galaxy collection install -r requirements.yml -p ./ -f
+# More info can be found here: https://docs.ansible.com/ansible/latest/user_guide/collections_using.html
+
+# IMPORTANT: Ansible Tower 3.7 does not recognize `collections:` section in the `roles/requirements.yml` file
+# so it needs to be defined here.
+
+collections:
+
+    # Ansible Community General Collection
+    # This collection has a few dependencies that will result in downloading other collections
+    # https://github.com/ansible-collections/community.general
+    - name: community.general
+      version: 3.6.0
+
+    # https://github.com/ansible-collections/azure
+    - name: azure.azcollection
+      version: 1.9.0
+
+    # https://github.com/ansible-collections/vmware
+    - name: community.vmware
+      version: 1.14.0
+
+    # https://github.com/ansible-collections/amazon.aws
+    - name: amazon.aws
+      version: 1.5.0
+
+    # https://github.com/ansible-collections/google.cloud
+    - name: google.cloud
+      version: 1.0.2

@@ -5,3 +5,5 @@ collections/ansible_collections
 .vmware*
 
 __pycache__
+
+.DS_Store
